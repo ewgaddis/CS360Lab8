@@ -1,0 +1,19 @@
+{
+	"author": "Eli Gaddis",
+	"name": "ewgaddis.lab6",
+	"version": "0.1.1",
+	"description": "A REST server for finding cities in Utah",
+	"main": "simple",
+	"repository": {
+		"type": "git",
+		"location": "https://github.com/ewgaddis/CS360Lab6.git"
+	},
+	"keywords": [
+		"lab6",
+		"CS360"
+	],
+	"dependencies": {},
+	"engines": {
+		"node": "*"
+	}
+}

@@ -1,0 +1,29 @@
+nohup: ignoring input
+In /comment route
+In GET /comment route
+Document Array: 
+[ { Name: 'Mickey',
+    Comment: 'Hello',
+    _id: 54ffac27523f011322f058ac },
+  { Name: 'Bob', Comment: 'Bye', _id: 54ffacc94aba1626223e0a20 },
+  { Name: 'Eli',
+    Comment: 'I am a computer scientist!',
+    _id: 54ffb08570f5589f2270035e },
+  { Name: 'Donald', Comment: 'Hi', _id: 54ffb1beb7677fbc22bddd09 },
+  { Name: 'John',
+    Comment: 'This is awesome!',
+    _id: 5500701f9d04a7f42f29e281 } ]
+In /comment route
+In GET /comment route
+Document Array: 
+[ { Name: 'Mickey',
+    Comment: 'Hello',
+    _id: 54ffac27523f011322f058ac },
+  { Name: 'Bob', Comment: 'Bye', _id: 54ffacc94aba1626223e0a20 },
+  { Name: 'Eli',
+    Comment: 'I am a computer scientist!',
+    _id: 54ffb08570f5589f2270035e },
+  { Name: 'Donald', Comment: 'Hi', _id: 54ffb1beb7677fbc22bddd09 },
+  { Name: 'John',
+    Comment: 'This is awesome!',
+    _id: 5500701f9d04a7f42f29e281 } ]

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<link rel="stylesheet" href="base.css" />
+	<title>Comment Weather</title>
+
+	<script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<div id="header">
+		<h1>Eli Gaddis's CS360 Website</h1>
+	</div>
+
+	<div id="nav">
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="currentWeather.html">Current Weather</a></li>
+			<li><a href="currentWeather.html">Weather Forecast</a></li>
+			<li><a href="comment.html">Comment Weather</a></li>
+			<li><a href="resume.html">My Resume</a></li>
+			<li><a href="about.html">About Me</a></li>
+		</ul>
+	</div>
+
+	<div id="content">
+		<form id="commentForm" action="">
+		  Name: <input type="text" id="Name" value="Mickey" /><br />
+		  comment: <input type="text" id="Comment" value="Hello"><br />
+		</form>
+
+		<button id="submit">Submit Comment</button>
+		<button id="show">Show Comments</button>
+
+		<div id="json"></div>
+		<div id="done"></div>
+
+		<p>Current Comments</p>
+		<div id="currentComments"></div>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			var url = "http://52.10.232.86/comment";
+
+			$("#submit").click(function() {
+				var myObj = { Name: $("#Name").val(),
+				              Comment: $("#Comment").val() };
+
+				jobj = JSON.stringify(myObj);
+				$("#json").text(jobj);	
+
+				$.post(url, jobj, function(data, textStatus) {
+					$("#done").append(textStatus);
+				});
+			});
+
+			$("#show").click(function() {
+				$.getJSON(url, function(data) {
+					var everything;
+
+					everything = "<ul>";
+					$.each(data, function(i, item) {
+						everything += "<li> Name: " + data[i].Name + ", Comment: " + data[i].Comment + "</li>";
+					});
+					everything += "</ul>";
+
+					$("#currentComments").html(everything);
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>
