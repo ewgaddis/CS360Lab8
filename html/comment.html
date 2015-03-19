@@ -44,17 +44,24 @@
 
 	<script>
 		$(document).ready(function() {
-			var url = "http://52.10.232.86/comment";
+			var url = "https://52.10.232.86/comment";
 
 			$("#submit").click(function() {
 				var myObj = { Name: $("#Name").val(),
 				              Comment: $("#Comment").val() };
 
 				jobj = JSON.stringify(myObj);
-				$("#json").text(jobj);	
+				$("#json").text(jobj);
 
-				$.post(url, jobj, function(data, textStatus) {
-					$("#done").append(textStatus);
+				jQuery.ajax({
+					url: url,
+					type: "POST",
+					data: jobj,
+					dataType: "json",
+					contentType: "application/json; charset=utf-8",
+					success: function(data){
+						$("#done").append("Success");
+					}
 				});
 			});
 
