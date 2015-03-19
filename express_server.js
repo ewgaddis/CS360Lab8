@@ -149,7 +149,7 @@ app.post('/comment', auth, function(req, res) {
 
 			// Sends a success response
 			res.status(200);
-			res.end();
+			res.end("{ textStatus: \"Success\" }");
 		});
 	});
 });
